@@ -31,8 +31,6 @@ yarn install --frozen-lockfile
 
 Use an authorized GitHub account if the repository is private. If Corepack already manages Yarn, use `corepack enable` instead of overwriting its shim; this repository pins Yarn 1.22.22. Do not install over the shim with `--force`.
 
-For an existing Yarn 4 checkout: stop the dev server, pull changes, remove `node_modules`, then reinstall. On PowerShell: `Remove-Item -Recurse -Force node_modules`. On macOS/Linux: `rm -rf node_modules`. Keep the new committed `yarn.lock`. Yarn 1 uses `--frozen-lockfile`, not `--immutable`.
-
 ### 2. Create the database
 
 ```sh
