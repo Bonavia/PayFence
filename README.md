@@ -16,11 +16,11 @@ The invoice workspace uses simulated payments. The separate contract lab demonst
 
 ## Run
 
-Requires Node 22.13+ and pnpm. Install with `pnpm install`, run `pnpm dev`, typecheck with `pnpm exec tsc --noEmit`, build with `pnpm build`. The authenticated workspace requires the Sites runtime and D1 binding `DB`; it intentionally does not bypass authentication on localhost. Database schema is in `db/schema.ts`; migrations are in `drizzle/`.
+Requires Node 22.13+ and Yarn 4.18.0. Enable Corepack with `corepack enable` (install Corepack first with `npm install -g corepack` if unavailable). Install with `yarn install`, run `yarn dev`, typecheck with `yarn tsc --noEmit`, build with `yarn build`. For CI, use `yarn install --immutable` or `yarn install:ci`. The authenticated workspace requires the Sites runtime and D1 binding `DB`; it intentionally does not bypass authentication on localhost. Database schema is in `db/schema.ts`; migrations are in `drizzle/`.
 
-Run `pnpm test` for local, in-memory blockchain tests and invoice checks. Run `pnpm contracts:compile` after changing Solidity source. Tests require no wallet, network or funds. Ganache may print a native-module warning and use its JavaScript fallback.
+Run `yarn test` for local, in-memory blockchain tests and invoice checks. Run `yarn contracts:compile` after changing Solidity source. Tests require no wallet, network or funds. Ganache may print a native-module warning and use its JavaScript fallback.
 
-For a browser wallet test, start `pnpm chain`, add localhost RPC on chain ID 31337, and import one of the local-only generated test keys into a separate test wallet. Deploy and run from Testnet lab. Never reuse those keys or send real funds to them. Sepolia (11155111) is also permitted but requires faucet ETH. This UI rejects all other chain IDs. The Solidity contract itself is chain agnostic.
+For a browser wallet test, start `yarn chain`, add localhost RPC on chain ID 31337, and import one of the local-only generated test keys into a separate test wallet. Deploy and run from Testnet lab. Never reuse those keys or send real funds to them. Sepolia (11155111) is also permitted but requires faucet ETH. This UI rejects all other chain IDs. The Solidity contract itself is chain agnostic.
 
 ## Demo story
 
