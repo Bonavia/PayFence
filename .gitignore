@@ -47,4 +47,3 @@ next-env.d.ts
 *.tsbuildinfo
 
 pnpm-lock.yaml
-yarn.lock

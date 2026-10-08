@@ -6,7 +6,7 @@
     "node": ">=22.13.0"
   },
   "scripts": {
-    "install:ci": "yarn install --immutable",
+    "install:ci": "yarn install --frozen-lockfile --production=false",
     "dev": "node scripts/run-framework.mjs dev",
     "build": "node scripts/run-framework.mjs build",
     "start": "node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js dev --config dist/server/wrangler.json --local --persist-to .wrangler/state --ip 127.0.0.1 --inspector-port 0",
@@ -14,7 +14,12 @@
     "db:generate": "drizzle-kit generate",
     "test": "node --experimental-strip-types --test tests/*.test.mjs",
     "contracts:compile": "node scripts/compile-contracts.mjs",
-    "chain": "ganache --chain.chainId 31337 --server.host 127.0.0.1"
+    "chain": "ganache --chain.chainId 31337 --server.host 127.0.0.1",
+    "db:migrate": "node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1 migrations apply DB --local --config wrangler.local.jsonc --persist-to .wrangler/state",
+    "db:status": "node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1 migrations list DB --local --config wrangler.local.jsonc --persist-to .wrangler/state",
+    "mcp": "node --experimental-strip-types scripts/mcp-server.mjs",
+    "mcp:demo": "node --experimental-strip-types scripts/mcp-demo.mjs",
+    "demo:evidence": "node --experimental-strip-types scripts/demo-evidence.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
@@ -42,7 +47,8 @@
     "sonner": "^2.0.8",
     "tailwind-merge": "3.6.0",
     "vaul": "^1.1.2",
-    "zod": "^3.25.76"
+    "zod": "^3.25.76",
+    "@modelcontextprotocol/sdk": "1.32.1"
   },
   "devDependencies": {
     "@cloudflare/vite-plugin": "1.37.1",
@@ -70,8 +76,8 @@
     "wrangler": "4.92.0"
   },
   "type": "module",
-  "packageManager": "yarn@4.18.0",
+  "packageManager": "yarn@1.22.22",
   "resolutions": {
-    "miniflare/sharp": "0.35.4"
+    "**/miniflare/sharp": "0.35.4"
   }
 }
