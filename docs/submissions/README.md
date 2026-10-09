@@ -1,49 +1,45 @@
-# PayFence submission preparation
+# PayFence — submission preparation
 
-Research checked 8 October 2026. No entry has been submitted. Use the event-specific draft, replace every `[OWNER INPUT]` or `[REQUIRED]` field, and review the current portal before submission. No prize outcome is promised.
+Updated 9 October 2026. This package targets Colosseum Crypto World's Fair. No entry has been submitted. The current source branch is `standalone-local`.
 
-| Event | Deadline from organizer | Fit and next gate |
-| --- | --- | --- |
-| Colosseum Crypto World's Fair | 12 October 2026; confirm cutoff/timezone in dashboard | Closest current product fit. Multi-ecosystem competition; do not claim a Solana deployment. Record pitch and product videos, provide founder and demand evidence, grant judge access. |
-| Arc Microgrants | 14 October 2026, 23:59 ET | Not eligible yet: organizer requires working Arc mainnet deployment and public repository. Current code is testnet-only. |
-| Amazon Build Ship Shape, Alexa+ | 23 October 2026, 12:00 PDT | MCP implementation added. Record it working; private-repo judge access or public licensed repo, product feedback, and development disclosure remain. |
-| Mergetober | PR opened 1–31 October 2026 | Separate Cognee contribution, not a PayFence app submission. Assignment required before coding; AI-generated PRs are prohibited. |
+## Prepared
 
-The Colosseum date is date-only on its landing page; do not infer a midnight cutoff. Arc's event calendar spans into October 15, but its explicit submission text gives October 14 at 23:59 ET. These facts are sourced in the linked event pages below.
+- Current product and business-hypothesis packet: [colosseum.md](colosseum.md).
+- English pitch/demo videos, captions, and transcripts in the delivered media package.
+- Real browser recording of a local signed contract rehearsal, explicitly labelled as automated test-wallet/mock-token evidence.
+- Reviewed logo derived from the existing shield mark.
+- [Public Sepolia guide](sepolia-guide.md), deployment/verification command, and isolated RPC tests.
+- [Founder/accelerator worksheet](founder-worksheet.md) and [customer-validation plan](validation-plan.md).
+- Updated [validation record](validation.md) and [video guide](video-scripts.md).
 
-## Files
+## Remaining owner actions
 
-- [Winner comparison and gap decisions](winner-review.md)
-- [Colosseum field-aligned draft](colosseum.md)
-- [Amazon field-aligned draft](amazon.md)
-- [Arc and Mergetober gates](other-events.md)
-- [Demo and pitch recording scripts](video-scripts.md)
-- [Validation record](validation.md)
+| Action | Why it remains |
+| --- | --- |
+| Write founder background, personal motivation, and accelerator answers | Owner explicitly chose to keep founder facts pending; do not invent them |
+| Confirm team registration and actual development history | Requires owner/account information |
+| Publish reviewed videos and paste judge-accessible URLs | Local video files are not published URLs; no video-upload account is connected |
+| Confirm private-repository judge access | GitHub plugin has no collaborator-invitation tool |
+| Produce public Sepolia proof if desired | Requires owner's real RPC and separate faucet-funded test wallet |
+| Conduct customer interviews | No customer access or outreach authorization; a plan is not traction |
+| Review and submit the actual form | Needs personal answers, portal declarations, and acceptance of terms |
 
-The public organizer requirements define the field map. Logged-in form-specific character limits, declarations, and any extra questions still need checking at submission time; this is not a claimed copy of an unseen portal form.
+The owner confirmed no traction, outside funding, or prior submissions and confirmed accelerator interest on 9 October 2026. Do not replace those disclosures with projected achievements.
 
-## Implemented in this update
+Deadline: **12 October 2026, 11:59 p.m. Pacific** (**13 October, 1:59 a.m. Chicago**). Check the portal for updates. Every member must register; only one product/team per individual is allowed. Relevant pre-event work must be disclosed.
 
-1. Yarn Classic 1.22.22, compatible lockfile, D1 migration/status commands, and complete README.
-2. Shared review evaluator and hash-bound review packets.
-3. Audit genesis validation and optional retained-head verification, with tampering tests.
-4. Approved-invoice rehearsal instead of the old unrelated self-payment; stable invoice replay key, freshness checks, signed evidence export.
-5. Actual Streamable HTTP MCP server and SDK demo client, with protocol and origin-validation tests.
-6. Reproducible local-chain evidence scenario, explicitly labelled as a fixture.
+## Current product limits
 
-## Remaining product gaps
+Local single-workspace Next.js/SQLite app. Dashboard payments are simulations. Real contract rehearsals use mock tokens and do not reconcile receipts into dashboard status. MCP reads exported snapshots, not an authenticated live workspace. No independent contract audit, real USDC settlement, demand validation, multi-chain integration beyond the supported EVM networks, or public deployment is claimed.
 
-The testnet workflow still requires several wallet prompts and does not reconcile receipts into D1. The MCP workflow reads exports, not live workspace data, and has no public authenticated service. Production settlement needs token allowlists, authorization roles, wallet/contract review, receipt reconciliation, and operational controls. We should validate demand before building accounting connectors or switching chains for a prize.
+## Other historical drafts
 
-## Actions requiring the owner
-
-Record and publish authentic demo/pitch videos; supply team/location/background and truthful traction/funding disclosures; choose the final event tracks; arrange judge access; verify rights/licensing; submit and accept event terms. Changing repository visibility, inviting judges, spending mainnet gas, or signing with a funded wallet has not been done as part of code preparation.
+`amazon.md`, `other-events.md`, and `winner-review.md` were prepared earlier for separate events/research. They are historical and may describe the previous architecture. They are not the current Colosseum submission packet.
 
 ## Official sources
 
-- https://colosseum.com/worldsfair
 - https://colosseum.com/hackathon
-- https://community.arc.io/public/events/arc-microgrants-f8tijfjhyq
-- https://amazonappdev2026.devpost.com/
-- https://amazonappdev2026.devpost.com/rules
-- https://www.wemakedevs.org/hackathons/mergetober/rules
+- https://colosseum.com/worldsfair
+- https://colosseum.com/legal/Crypto%20World%27s%20Fair%20Hackathon%20Rules.pdf
+
+The authenticated portal may contain extra questions or limits. This package is not a claimed transcription of a form that has not been opened.

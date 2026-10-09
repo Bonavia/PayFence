@@ -1,0 +1,25 @@
+Synthetic English narration. Sample workspace and valueless mock tokens.
+
+00:00:00,000 — PayFence
+PayFence helps contractor heavy teams review an invoice before they sign an E V M payment. The first product focuses on one reviewer and one contractor invoice, checking the destination, amount, duplicate reference, and the exact details that were approved.
+
+00:00:17,009 — A familiar vendor name is not enough
+A familiar vendor name is not the same as authorizing the destination on an invoice. Details can also change after a reviewer approves them. PayFence makes these checks explicit and invalidates an approval when payment details change. This is our technical thesis, not yet a validated customer finding.
+
+00:00:37,010 — One clear review workflow
+The local dashboard checks registered recipients, duplicate invoice references, per payment limits, and valid destinations. It persists the workspace in SQLite and binds approval to a fingerprint. An edit clears that approval. Review packets and a hash linked audit trail make the decision inspectable.
+
+00:00:57,019 — The contract checks the signed order
+The signed payment lab carries the approved invoice into an E I P seven twelve order. The contract checks the registered recipient, limit, payer signature, expiry, and invoice replay protection. We have demonstrated a real local contract transfer to the invoice recipient using valueless mock tokens.
+
+00:01:17,095 — Decision evidence travels with the invoice
+The proposed differentiator is the connection between invoice controls, exact authorization, and portable evidence. Read only M C P tools let assistants inspect exported snapshots without spend authority. Market uniqueness remains unproven. PayFence is not an autonomous treasury or a guarantee that all fraud is prevented.
+
+00:01:37,840 — Start with a small, reachable audience
+The initial customer hypothesis is small agencies and teams already paying contractors through E V M wallets. We plan direct founder led discovery with five payment reviewers, followed by a small review only pilot cohort. We will measure confusion, review time, repeat use, and willingness to pay.
+
+00:01:57,840 — Test the business before expanding
+A subscription per workspace is the business hypothesis. Pricing, acquisition cost, retention, and market size remain unvalidated. The owner reports no customer interviews, users, revenue, outside funding, or prior submissions. The next evidence should come from real payment reviewers, not additional demo fixtures.
+
+00:02:19,715 — A focused next chapter
+The owner intends to apply to the accelerator and build PayFence full time if selected. The next priorities are customer validation, public testnet proof, receipt reconciliation, and reviewed production controls. Founder background and personal motivation remain pending. The ambition is clear: make every contractor payment decision easier to inspect.

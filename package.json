@@ -17,7 +17,8 @@
     "mcp": "node --experimental-strip-types scripts/mcp-server.mjs",
     "mcp:demo": "node --experimental-strip-types scripts/mcp-demo.mjs",
     "demo:evidence": "node --experimental-strip-types scripts/demo-evidence.mjs",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "sepolia:evidence": "node --env-file-if-exists=.env.local --experimental-strip-types scripts/sepolia-evidence.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",

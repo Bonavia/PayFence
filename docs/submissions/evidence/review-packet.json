@@ -1,0 +1,53 @@
+{
+  "schema": "payfence.review.v1",
+  "createdAt": "2026-10-09T14:44:32.305Z",
+  "review": {
+    "invoiceId": "demo-001",
+    "reference": "SN-1042",
+    "vendor": "Studio North",
+    "amount": "2300",
+    "recipient": "0x1111111111111111111111111111111111111111",
+    "revision": 3,
+    "status": "approved",
+    "controls": [
+      {
+        "name": "Registered recipient",
+        "ok": true,
+        "detail": "The invoice wallet must match the vendor’s registered wallet."
+      },
+      {
+        "name": "Unique invoice",
+        "ok": true,
+        "detail": "Same vendor and invoice reference cannot be submitted twice."
+      },
+      {
+        "name": "Payment limit",
+        "ok": true,
+        "detail": "Amount must fit the vendor’s per-payment limit."
+      },
+      {
+        "name": "Valid destination",
+        "ok": true,
+        "detail": "A non-zero EVM wallet address is required."
+      }
+    ],
+    "fingerprint": "514bccbfaa0ed59177cb54aeffc2f8b669a3459a38834c92e0afb39d13eb3993",
+    "approvalMatches": true,
+    "audit": {
+      "valid": true,
+      "count": 5,
+      "head": "23094e7c585c23966aa96d81793c40c6fc78da323b70fd1f694520500cc00c7b",
+      "failedIndex": null
+    },
+    "readyForRehearsal": true,
+    "nextAction": "A human may rehearse this invoice with mock tokens in the testnet lab."
+  },
+  "network": {
+    "chainId": 31337,
+    "contract": "",
+    "token": ""
+  },
+  "workspaceMode": "demo",
+  "limitations": "Snapshot review only. Not a payment authorization, independent audit, or proof of settlement. Recheck live state before signing.",
+  "packetHash": "f213dfbf7460eb7bc02c407b8b43201010dae576df4574b729ff5f082e38e093"
+}
