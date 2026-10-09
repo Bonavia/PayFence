@@ -26,7 +26,7 @@ export function createPayFenceMcp(readState) {
     inputSchema: {}, annotations,
   }, async () => {
     const state = await readState();
-    return result({ source: 'exported snapshot or sample fixture, not live D1', invoices: await Promise.all(state.invoices.filter(i => i.status !== 'paid').map(i => reviewInvoice(state, i.id))) });
+    return result({ source: 'exported snapshot or sample fixture, not the live dashboard database', invoices: await Promise.all(state.invoices.filter(i => i.status !== 'paid').map(i => reviewInvoice(state, i.id))) });
   });
   server.registerTool('prepare_review_packet', {
     description: 'Produce a hash-bound explanation and review packet for one invoice; human review remains required. This creates no payment or approval.',
@@ -82,3 +82,4 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
     console.log(`PayFence MCP: http://127.0.0.1:${port}/mcp — ${file ? 'exported snapshot' : 'sample fixture'}. No payment tools. Do not expose this local server publicly.`);
   });
 }
+
