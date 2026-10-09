@@ -52,3 +52,6 @@ pnpm-lock.yaml
 
 # Local workspace data
 /.data/
+
+yarn.lock
+package-lock.json
