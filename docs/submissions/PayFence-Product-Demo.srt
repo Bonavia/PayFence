@@ -1,0 +1,199 @@
+1
+00:00:00,150 --> 00:00:03,337
+PayFence reviews contractor invoices before signing an E V M
+
+2
+00:00:03,337 --> 00:00:06,525
+payment. This recording uses the working local application, sample invoices,
+
+3
+00:00:06,525 --> 00:00:09,713
+and an automated test wallet. Every contract transaction uses valueless
+
+4
+00:00:09,713 --> 00:00:12,901
+mock tokens on an ephemeral local chain.
+
+5
+00:00:14,202 --> 00:00:16,797
+Studio North's invoice requests a different wallet from the registered
+
+6
+00:00:16,797 --> 00:00:19,392
+vendor. The recipient check fails, and approval is disabled. The
+
+7
+00:00:19,392 --> 00:00:21,987
+familiar vendor name does not override the exact destination being
+
+8
+00:00:21,987 --> 00:00:24,582
+requested.
+
+9
+00:00:25,895 --> 00:00:29,038
+Restoring the registered wallet resolves this sample exception. The review
+
+10
+00:00:29,038 --> 00:00:32,182
+also checks duplicate invoice references, the vendor's per payment limit,
+
+11
+00:00:32,182 --> 00:00:35,325
+and a valid nonzero destination. These are specific controls, not
+
+12
+00:00:35,325 --> 00:00:38,468
+a guarantee against every kind of fraud.
+
+13
+00:00:39,771 --> 00:00:42,650
+The reviewer can now approve the current invoice details. PayFence
+
+14
+00:00:42,650 --> 00:00:45,529
+stores an approval fingerprint. This dashboard approval is a review
+
+15
+00:00:45,529 --> 00:00:48,409
+decision, not a wallet signature or a blockchain payment.
+
+16
+00:00:49,719 --> 00:00:52,314
+Now the amount changes. Saving the edit increments the revision,
+
+17
+00:00:52,314 --> 00:00:54,909
+clears the old approval, and returns the invoice to review.
+
+18
+00:00:54,909 --> 00:00:57,504
+This prevents the dashboard from presenting an earlier approval as
+
+19
+00:00:57,504 --> 00:01:00,098
+approval of changed details.
+
+20
+00:01:01,404 --> 00:01:04,328
+After reviewing the new amount, the invoice is approved again.
+
+21
+00:01:04,328 --> 00:01:07,252
+The downloaded review packet includes the checks, revision, approval match,
+
+22
+00:01:07,252 --> 00:01:10,176
+audit result, and a packet hash. It is portable review
+
+23
+00:01:10,176 --> 00:01:13,101
+evidence, not proof that money has moved.
+
+24
+00:01:14,409 --> 00:01:17,685
+The audit trail records recipient restoration, approval, and the later
+
+25
+00:01:17,685 --> 00:01:20,961
+edit. Integrity verification checks the hashes and links. A separately
+
+26
+00:01:20,961 --> 00:01:24,236
+retained head can detect truncation; the chain does not prove
+
+27
+00:01:24,236 --> 00:01:27,512
+authorship or prevent an administrator from rewriting the whole history.
+
+28
+00:01:28,815 --> 00:01:31,255
+The signed payment lab selects the approved invoice. This automated
+
+29
+00:01:31,255 --> 00:01:33,694
+test wallet deploys a valueless mock token and the PayFence
+
+30
+00:01:33,694 --> 00:01:36,134
+contract on local chain thirty one thousand three hundred thirty
+
+31
+00:01:36,134 --> 00:01:38,574
+seven. No public deployment or human wallet extension is being
+
+32
+00:01:38,574 --> 00:01:41,014
+claimed.
+
+33
+00:01:42,317 --> 00:01:45,215
+The lab registers the invoice vendor, mints test tokens, grants
+
+34
+00:01:45,215 --> 00:01:48,112
+the exact allowance, signs the order, and executes it. The
+
+35
+00:01:48,112 --> 00:01:51,009
+contract checks the recipient, amount limit, payer signature, expiry, and
+
+36
+00:01:51,009 --> 00:01:53,906
+invoice replay marker. The app rechecks the current approval before
+
+37
+00:01:53,906 --> 00:01:56,803
+signing and sending.
+
+38
+00:01:58,120 --> 00:02:01,673
+The receipt confirms a real local contract transaction to the
+
+39
+00:02:01,673 --> 00:02:05,226
+invoice recipient. The signed evidence includes the domain, order, signature,
+
+40
+00:02:05,226 --> 00:02:08,779
+transaction hash, and block number. Dashboard status remains separate, so
+
+41
+00:02:08,779 --> 00:02:12,332
+this prototype does not claim automatic settlement reconciliation.
+
+42
+00:02:13,642 --> 00:02:16,119
+The optional M C P service exposes three read only
+
+43
+00:02:16,119 --> 00:02:18,596
+tools: review the queue, prepare a review packet, and verify
+
+44
+00:02:18,596 --> 00:02:21,073
+the audit. Here are actual S D K responses from
+
+45
+00:02:21,073 --> 00:02:23,550
+an exported workspace snapshot. The service cannot approve an invoice
+
+46
+00:02:23,550 --> 00:02:26,027
+or send funds.
+
+47
+00:02:27,340 --> 00:02:31,136
+PayFence connects invoice checks to exact authorization and inspectable evidence.
+
+48
+00:02:31,136 --> 00:02:34,932
+The local app, contract flow, and review tools work. Customer
+
+49
+00:02:34,932 --> 00:02:38,728
+validation, public Sepolia proof, and production controls remain next steps.
+
+50
+00:02:38,728 --> 00:02:42,524
+No real stablecoin settlement or customer traction is claimed.

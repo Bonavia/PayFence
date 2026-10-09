@@ -1,0 +1,189 @@
+{
+  "review_queue": {
+    "source": "exported snapshot or sample fixture, not the live dashboard database",
+    "invoices": [
+      {
+        "invoiceId": "demo-001",
+        "reference": "SN-1042",
+        "vendor": "Studio North",
+        "amount": "2300",
+        "recipient": "0x1111111111111111111111111111111111111111",
+        "revision": 3,
+        "status": "approved",
+        "controls": [
+          {
+            "name": "Registered recipient",
+            "ok": true,
+            "detail": "The invoice wallet must match the vendor’s registered wallet."
+          },
+          {
+            "name": "Unique invoice",
+            "ok": true,
+            "detail": "Same vendor and invoice reference cannot be submitted twice."
+          },
+          {
+            "name": "Payment limit",
+            "ok": true,
+            "detail": "Amount must fit the vendor’s per-payment limit."
+          },
+          {
+            "name": "Valid destination",
+            "ok": true,
+            "detail": "A non-zero EVM wallet address is required."
+          }
+        ],
+        "fingerprint": "514bccbfaa0ed59177cb54aeffc2f8b669a3459a38834c92e0afb39d13eb3993",
+        "approvalMatches": true,
+        "audit": {
+          "valid": true,
+          "count": 5,
+          "head": "23094e7c585c23966aa96d81793c40c6fc78da323b70fd1f694520500cc00c7b",
+          "failedIndex": null
+        },
+        "readyForRehearsal": true,
+        "nextAction": "A human may rehearse this invoice with mock tokens in the testnet lab."
+      },
+      {
+        "invoiceId": "demo-002",
+        "reference": "ORB-208",
+        "vendor": "Orbit Engineering",
+        "amount": "4800",
+        "recipient": "0x2222222222222222222222222222222222222222",
+        "revision": 1,
+        "status": "review",
+        "controls": [
+          {
+            "name": "Registered recipient",
+            "ok": true,
+            "detail": "The invoice wallet must match the vendor’s registered wallet."
+          },
+          {
+            "name": "Unique invoice",
+            "ok": true,
+            "detail": "Same vendor and invoice reference cannot be submitted twice."
+          },
+          {
+            "name": "Payment limit",
+            "ok": true,
+            "detail": "Amount must fit the vendor’s per-payment limit."
+          },
+          {
+            "name": "Valid destination",
+            "ok": true,
+            "detail": "A non-zero EVM wallet address is required."
+          }
+        ],
+        "fingerprint": "3f89e6360b46f05fe636456f51204148d11634701116aa78a6a67b61ab8db37f",
+        "approvalMatches": false,
+        "audit": {
+          "valid": true,
+          "count": 5,
+          "head": "23094e7c585c23966aa96d81793c40c6fc78da323b70fd1f694520500cc00c7b",
+          "failedIndex": null
+        },
+        "readyForRehearsal": false,
+        "nextAction": "A human must review and approve the current details in the workspace."
+      },
+      {
+        "invoiceId": "demo-003",
+        "reference": "MR-091",
+        "vendor": "Mono Research",
+        "amount": "1250",
+        "recipient": "0x3333333333333333333333333333333333333333",
+        "revision": 1,
+        "status": "review",
+        "controls": [
+          {
+            "name": "Registered recipient",
+            "ok": true,
+            "detail": "The invoice wallet must match the vendor’s registered wallet."
+          },
+          {
+            "name": "Unique invoice",
+            "ok": true,
+            "detail": "Same vendor and invoice reference cannot be submitted twice."
+          },
+          {
+            "name": "Payment limit",
+            "ok": true,
+            "detail": "Amount must fit the vendor’s per-payment limit."
+          },
+          {
+            "name": "Valid destination",
+            "ok": true,
+            "detail": "A non-zero EVM wallet address is required."
+          }
+        ],
+        "fingerprint": "5e89543f67a0eef93483d7a643aff50b28eaaf3e6cb5a46716e494a9e5e803e5",
+        "approvalMatches": false,
+        "audit": {
+          "valid": true,
+          "count": 5,
+          "head": "23094e7c585c23966aa96d81793c40c6fc78da323b70fd1f694520500cc00c7b",
+          "failedIndex": null
+        },
+        "readyForRehearsal": false,
+        "nextAction": "A human must review and approve the current details in the workspace."
+      }
+    ]
+  },
+  "prepare_review_packet": {
+    "schema": "payfence.review.v1",
+    "createdAt": "2026-10-09T14:45:44.433Z",
+    "review": {
+      "invoiceId": "demo-001",
+      "reference": "SN-1042",
+      "vendor": "Studio North",
+      "amount": "2300",
+      "recipient": "0x1111111111111111111111111111111111111111",
+      "revision": 3,
+      "status": "approved",
+      "controls": [
+        {
+          "name": "Registered recipient",
+          "ok": true,
+          "detail": "The invoice wallet must match the vendor’s registered wallet."
+        },
+        {
+          "name": "Unique invoice",
+          "ok": true,
+          "detail": "Same vendor and invoice reference cannot be submitted twice."
+        },
+        {
+          "name": "Payment limit",
+          "ok": true,
+          "detail": "Amount must fit the vendor’s per-payment limit."
+        },
+        {
+          "name": "Valid destination",
+          "ok": true,
+          "detail": "A non-zero EVM wallet address is required."
+        }
+      ],
+      "fingerprint": "514bccbfaa0ed59177cb54aeffc2f8b669a3459a38834c92e0afb39d13eb3993",
+      "approvalMatches": true,
+      "audit": {
+        "valid": true,
+        "count": 5,
+        "head": "23094e7c585c23966aa96d81793c40c6fc78da323b70fd1f694520500cc00c7b",
+        "failedIndex": null
+      },
+      "readyForRehearsal": true,
+      "nextAction": "A human may rehearse this invoice with mock tokens in the testnet lab."
+    },
+    "network": {
+      "chainId": 31337,
+      "contract": "",
+      "token": ""
+    },
+    "workspaceMode": "demo",
+    "limitations": "Snapshot review only. Not a payment authorization, independent audit, or proof of settlement. Recheck live state before signing.",
+    "packetHash": "a471b8852b3802a81a66127135ecfb76d4145a8dc4209b967974bf30c4acd023"
+  },
+  "verify_audit": {
+    "valid": true,
+    "count": 5,
+    "head": "23094e7c585c23966aa96d81793c40c6fc78da323b70fd1f694520500cc00c7b",
+    "failedIndex": null
+  }
+}

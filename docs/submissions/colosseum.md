@@ -1,6 +1,8 @@
-# Colosseum Crypto Worlds Fair submission draft
+# PayFence — Crypto World's Fair submission packet
 
-Field map: https://colosseum.com/hackathon (submission FAQ). Event: https://colosseum.com/worldsfair. Deadline: 12 October 2026; verify exact portal cutoff. Confirm any extra fields and limits in the authenticated portal.
+Updated 9 October 2026 for the `standalone-local` branch. Technical/product copy below describes the actual prototype. The founder's personal answers remain pending by owner choice and must be written personally before submission. No entry has been submitted.
+
+Deadline: 12 October 2026, 11:59 p.m. Pacific (13 October, 1:59 a.m. America/Chicago). Recheck the authenticated portal for changes, exact questions, and character limits.
 
 ## Product name
 
@@ -8,68 +10,80 @@ PayFence
 
 ## Brief description
 
-PayFence helps contractor-heavy teams catch changed recipients, duplicate invoices, and over-limit payments before signing. It connects invoice review to a mock-token EVM rehearsal and exports the checks, approval fingerprint, signed order, and transaction evidence. Assistants can inspect review snapshots through MCP without authority to approve or pay.
+PayFence helps teams review contractor invoices before signing an EVM payment. It checks the registered recipient, duplicate invoice references, and per-payment limits, invalidates approval when details change, and connects approved invoices to signed mock-token rehearsals with exportable decision evidence.
 
-## Blockchains and tools integrated
+## Audience and first use case
 
-EVM Solidity contract; local chain 31337 and Ethereum Sepolia support; ethers; React and TypeScript; Vinext/Vite; Cloudflare D1; MCP Streamable HTTP; Yarn 1. The automated evidence scenario runs on ephemeral Ganache. No public-chain deployment address or transaction is claimed without an independently verifiable link. No Solana or Arc integration is claimed.
+Our initial customer hypothesis is small agencies and contractor-heavy teams already handling EVM stablecoin payments. The first workflow is one payment reviewer checking one contractor invoice before signing. We are testing whether exact-detail approval and clear exceptions make that task more reliable without unnecessary review work. This is a target-customer hypothesis, not demonstrated demand.
 
-## Problem and product insight
+## Product insight — technical thesis, not a personal founder story
 
-An invoice can retain a familiar vendor name while its destination wallet changes. A reviewer can also approve one set of details and unknowingly act on a later revision. PayFence keeps the approved details explicit and checks recipient identity, duplicates, and limits before a test transaction. Its contract independently enforces the signed recipient and amount, expiry, and one-time invoice consumption.
+Recognizing a vendor name is not the same as authorizing the destination and amount on an invoice. The details reviewed off-chain can also change before signing. PayFence makes the registered recipient and payment constraints visible, fingerprints the approved invoice revision, and carries the payment fields into an EIP-712 order checked by a contract. Its proposed differentiator is the connection between invoice review, exact authorization, and portable decision evidence. We have not established market uniqueness or a fraud-prevention guarantee.
 
-This is a control layer for a narrow workflow. It is not a replacement for accounting, a fraud guarantee, or an autonomous treasury.
+## Current implementation and integrated tools
 
-## Product and execution
+Next.js, React, TypeScript, npm, Node's built-in SQLite, ethers, Solidity, Ganache, and the MCP SDK. The app runs locally with one shared workspace and no ChatGPT account or Cloudflare runtime. It supports local EVM chain 31337 and Ethereum Sepolia 11155111 for mock-token rehearsals. A public Sepolia deployment and explorer evidence have not yet been supplied.
 
-The browser stores each signed-in user's workspace in D1. Reviewing an invoice creates a fingerprint; changes invalidate approval. In the testnet lab, a human chooses an approved invoice, deploys mock contracts, and signs its exact order. The app rechecks the workspace before signing and sending. Signed evidence can be downloaded. Dashboard simulation state and the testnet receipt remain separate.
+The Solidity contract checks recipient, per-payment limit, payer signature, expiry, and one-time invoice consumption. Vendor wallet changes require the existing vendor wallet's signature. Signature domain separation includes chain and contract. Read-only MCP tools review exported snapshots; they cannot approve or spend.
 
-The MCP service exposes three read-only review capabilities against an exported snapshot: inspect the queue, prepare a review packet, and verify audit integrity. It never requests a private key or payment authorization.
+## What the demo proves
 
-## Team members and backgrounds
+1. A sample invoice with a mismatched wallet is blocked.
+2. Restoring the registered recipient allows exact-detail approval.
+3. Editing the amount clears approval; the revised invoice needs a new review.
+4. A real local EVM contract transfers valueless mock tokens to the invoice recipient using a signed order.
+5. Review, signed-order, receipt, and audit evidence can be exported.
+6. The optional MCP service exposes review tools against an exported snapshot.
 
-[OWNER INPUT: all actual team members, role, profile URL, relevant experience, and individual contribution. Do not infer identity from repository ownership or reuse a resume without confirmation.]
+The recorded test wallet is automated and connected to an ephemeral local chain. This is not a recording of a human wallet-extension confirmation or a public-chain transaction. Dashboard simulations, testnet receipts, and exported snapshots remain distinct; blockchain receipts are not automatically reconciled into dashboard status.
 
-## Team location
+## Business and distribution hypothesis
 
-[OWNER INPUT: actual location of each team member.]
+Start with direct outreach to agency owners and finance/operations reviewers already paying contractors in crypto. Ask to observe their present approval workflow and test PayFence with redacted invoices and valueless test tokens. Recruit a small first cohort before adding integrations or chains.
 
-## Product graphic
+Potential revenue is a subscription per workspace for payment-review controls and evidence exports. Pricing, willingness to pay, acquisition cost, retention, and market size are unvalidated. No revenue projection is claimed. A bottom-up market estimate needs evidence on the number of reachable teams, payment-review frequency, and a tested price.
 
-Repository asset: `public/favicon.svg`, an existing PayFence shield mark. Check required dimensions/file format in the portal and confirm rights to all included assets. Do not claim a new logo was created in this update.
+## Demand validation, funding, and prior submissions
 
-## Repository and reviewer access
+Owner confirmed on 9 October 2026: no customer interviews, users, revenue, outside funding, or prior submissions. Treat this as owner-supplied disclosure, not independently verified due diligence. Sample invoices and automated scenarios are not traction.
 
-https://github.com/Bonavia/PayFence
+Next validation: observe five actual payment reviewers, then seek up to ten willing pilot teams. Measure review completion, missed exceptions, time, repeated use, and willingness to pay. These are planned activities; no interviews or pilots have been conducted as part of this task. See [validation-plan.md](validation-plan.md).
 
-[REQUIRED: ensure reviewers can access the selected commit. The organizer allows a private repository when review access is granted to hackathon@colosseum.com. Access has not been granted in this task.]
+## Founder-market fit, motivation, and team
 
-## Presentation video
+[FOUNDER INPUT PENDING BY OWNER CHOICE: actual names, roles, locations, profiles, relevant experience, individual contributions, and the personal experience that led to this problem.]
 
-[REQUIRED: public or otherwise judge-accessible link to a two-to-three-minute presentation. Script: video-scripts.md.]
+Use [founder-worksheet.md](founder-worksheet.md). Do not submit generated product copy as a personal account of experiences that did not happen.
 
-## Product demonstration video
+## Development history and attribution
 
-[REQUIRED: judge-accessible product video of at most three minutes. Show functioning controls and the actual test transaction; label mock tokens and snapshots.]
+The repository contains prior framework/UI scaffolding and PayFence work. The 9 October conversion removed ChatGPT/Sites/Cloudflare dependencies and added standard Next.js/npm commands, automatic SQLite persistence, tests, and updated local setup. This submission-preparation update adds current documentation, recorded evidence, and Sepolia evidence tooling. AI assisted implementation, validation, document preparation, and media creation. Founder contribution and ownership statements must reflect actual work.
 
-## Go to market and distribution
+[FOUNDER INPUT PENDING: actual product start date; all relevant development before 14 September 2026 at 6:00 a.m. Pacific; work completed during the event; individual contributors; third-party code and asset rights. Do not infer product age from an import commit or backdate work.]
 
-Initial customer hypothesis: small agencies and contractor-heavy teams already using EVM stablecoins. Proposed entry point: a review-only pilot using redacted invoices and test wallets, distributed through agency operations communities and direct founder-led outreach. Interview targets should be users responsible for approving payments, not only developers.
+## Accelerator application
 
-Proposed pilot success measures: changed-recipient detection, duplicate rejection, review completion time, and whether a team returns for another payment cycle. These are planned measurements, not achieved results. A subscription per workspace is a pricing hypothesis; test willingness to pay before setting prices or forecasting revenue.
+Owner confirmed interest in applying and building PayFence full-time if selected. Toggle the accelerator supplement in the actual portal. Personal background, motivation, commitment logistics, and additional long-form answers remain pending. Use the worksheet; no claim is made about acceptance or funding.
 
-## Demand validation and traction
+## Repository and judge access
 
-No verified customer interviews, users, revenue, paid volume, pilots, or letters of intent are supplied in this repository. [OWNER INPUT: add only real evidence with dates, permission to cite, and a precise distinction between interviews, active use, and paid use.]
+Repository: https://github.com/Bonavia/PayFence/tree/standalone-local
 
-## Market and competitors
+Provide the final commit from the branch after preparation. The repository is private; reviewer access for `hackathon@colosseum.com` must be confirmed by the owner. The current GitHub plugin exposes no collaborator-invitation operation, and no invitation has been sent. Do not change visibility without an explicit owner decision.
 
-The initial market is contractor-payment operations for teams already using crypto. Size remains unvalidated; no top-down market-size figure is asserted. Existing alternatives include manual wallet checks, accounting workflows, payment infrastructure, and agent-security products. See winner-review.md for sourced comparisons. The proposed advantage is the link between invoice controls and portable evidence, not settlement speed alone.
+## Videos and graphic
 
-## Development history and funding
+Prepared assets: `PayFence-Pitch.mp4` and `PayFence-Product-Demo.mp4`, with English captions and disclosed synthetic narration. The founder must review the content, add a personal introduction if desired, and publish judge-accessible video links. Files and scripts alone are not published video URLs.
 
-Repository history records the initial PayFence upload and package-manager changes. This update adds review evidence, MCP, invoice rehearsal, and validation/documentation. Some framework/UI scaffolding predates the product. [OWNER INPUT: confirm actual product start date, team contributions, any prior submissions, outside capital, and development before the event window. Preserve commit history; do not backdate work.]
+- Presentation URL: [OWNER ACTION: upload reviewed pitch and paste accessible URL].
+- Product-demo URL: [OWNER ACTION: upload reviewed demo and paste accessible URL].
+- Product graphic: prepared `PayFence-Logo.png`, based on the existing repository shield mark. Check the portal's size/format requirements.
+- Public Sepolia proof: [OWNER ACTION: execute the guide with a separate faucet-funded test wallet, verify explorer links, and include the generated evidence].
 
-## Roadmap and commitment
+## Sources and final checks
 
-Next product priorities: receipt reconciliation, authenticated live MCP access, usability testing, and independently reviewed production controls. [OWNER INPUT: genuine founder commitment, availability, and accelerator interest.]
+- Requirements and judging: https://colosseum.com/hackathon
+- Event: https://colosseum.com/worldsfair
+- Rules: https://colosseum.com/legal/Crypto%20World%27s%20Fair%20Hackathon%20Rules.pdf
+
+Each team member must register, and each individual may participate in only one team/product submission. Relevant pre-event work must be disclosed. Confirm individual eligibility and rights in the portal, then personally review and accept the terms. No registration, submission, public media upload, judge invitation, customer contact, or testnet spending has been carried out by this preparation task.

@@ -119,4 +119,4 @@ Tests cover review rules, local persistence, stale-write rejection, request boun
 - **No approved invoice in the lab:** resolve its failed checks and approve it. A simulated-paid invoice is no longer eligible.
 - **Port already in use:** select another port using the commands above.
 
-Contracts remain an unaudited prototype. Limits are per payment, and off-chain approval is not a wallet authorization. The submission drafts under `docs/submissions` are historical preparation material and may describe the previous hosted architecture.
+Contracts remain an unaudited prototype. Limits are per payment, and off-chain approval is not a wallet authorization. The current [Colosseum submission packet](docs/submissions/README.md) includes the readiness checklist, video transcripts, validation record, local evidence, and a [Sepolia deployment guide](docs/submissions/sepolia-guide.md). Other event drafts are retained as historical material.

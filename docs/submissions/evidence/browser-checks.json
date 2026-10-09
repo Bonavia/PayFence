@@ -1,0 +1,17 @@
+{
+  "recordedAt": "2026-10-09",
+  "method": "Automated browser recording of the real production local app, isolated sample workspace and Ganache chain 31337",
+  "mockTokens": true,
+  "publicChainProof": false,
+  "checks": {
+    "changedRecipientBlocked": true,
+    "editClearsApproval": true,
+    "auditVerified": true,
+    "localTransactionConfirmed": true,
+    "exactRecipientBalance": true,
+    "readOnlyMcp": true,
+    "noBrowserErrors": true
+  },
+  "browserErrors": [],
+  "durationSeconds": 163.673839182
+}

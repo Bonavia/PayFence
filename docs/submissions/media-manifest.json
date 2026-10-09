@@ -1,0 +1,35 @@
+{
+  "preparedOn": "2026-10-09",
+  "publicationStatus": "Local files delivered; public URLs pending owner review/upload",
+  "narration": "Synthetic English voice",
+  "demoMethod": "Actual automated browser recording, sample workspace, automated test wallet, Ganache 31337, valueless mock tokens",
+  "assets": [
+    {
+      "filename": "PayFence-Pitch.mp4",
+      "bytes": 3866410,
+      "sha256": "0ca1403a8a57fe35c14a81f253e507f94daa4147dcb6adf901b6d7524be1bf41",
+      "durationSeconds": 162.43,
+      "streams": [
+        "video",
+        "audio",
+        "subtitle"
+      ]
+    },
+    {
+      "filename": "PayFence-Product-Demo.mp4",
+      "bytes": 8752889,
+      "sha256": "44b9dfdda856275bdc2fd9dc7d2163d47150473be847e409f424cbc136885b4f",
+      "durationSeconds": 163.674,
+      "streams": [
+        "video",
+        "audio",
+        "subtitle"
+      ]
+    },
+    {
+      "filename": "PayFence-Logo.png",
+      "bytes": 22577,
+      "sha256": "e4a2869fba3d9185092c1183dff87f4bdf293efd078d2bb01763101dedd92841"
+    }
+  ]
+}

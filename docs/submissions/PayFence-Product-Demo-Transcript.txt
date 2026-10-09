@@ -1,0 +1,37 @@
+Synthetic English narration. Sample workspace and valueless mock tokens.
+
+00:00:00,000 — PayFence · working prototype
+PayFence reviews contractor invoices before signing an E V M payment. This recording uses the working local application, sample invoices, and an automated test wallet. Every contract transaction uses valueless mock tokens on an ephemeral local chain.
+
+00:00:14,052 — 01 · Spot the changed recipient
+Studio North's invoice requests a different wallet from the registered vendor. The recipient check fails, and approval is disabled. The familiar vendor name does not override the exact destination being requested.
+
+00:00:25,745 — 02 · Restore the registered wallet
+Restoring the registered wallet resolves this sample exception. The review also checks duplicate invoice references, the vendor's per payment limit, and a valid nonzero destination. These are specific controls, not a guarantee against every kind of fraud.
+
+00:00:39,621 — 03 · Approve exact details
+The reviewer can now approve the current invoice details. PayFence stores an approval fingerprint. This dashboard approval is a review decision, not a wallet signature or a blockchain payment.
+
+00:00:49,569 — 04 · Change a detail; approval clears
+Now the amount changes. Saving the edit increments the revision, clears the old approval, and returns the invoice to review. This prevents the dashboard from presenting an earlier approval as approval of changed details.
+
+00:01:01,254 — 05 · Reapprove and export the review
+After reviewing the new amount, the invoice is approved again. The downloaded review packet includes the checks, revision, approval match, audit result, and a packet hash. It is portable review evidence, not proof that money has moved.
+
+00:01:14,259 — 06 · Verify the decision history
+The audit trail records recipient restoration, approval, and the later edit. Integrity verification checks the hashes and links. A separately retained head can detect truncation; the chain does not prove authorship or prevent an administrator from rewriting the whole history.
+
+00:01:28,665 — 07 · Deploy the test contracts
+The signed payment lab selects the approved invoice. This automated test wallet deploys a valueless mock token and the PayFence contract on local chain thirty one thousand three hundred thirty seven. No public deployment or human wallet extension is being claimed.
+
+00:01:42,167 — 08 · Sign and execute the invoice
+The lab registers the invoice vendor, mints test tokens, grants the exact allowance, signs the order, and executes it. The contract checks the recipient, amount limit, payer signature, expiry, and invoice replay marker. The app rechecks the current approval before signing and sending.
+
+00:01:57,970 — 09 · Inspect and export signed evidence
+The receipt confirms a real local contract transaction to the invoice recipient. The signed evidence includes the domain, order, signature, transaction hash, and block number. Dashboard status remains separate, so this prototype does not claim automatic settlement reconciliation.
+
+00:02:13,492 — 10 · Read-only assistant review
+The optional M C P service exposes three read only tools: review the queue, prepare a review packet, and verify the audit. Here are actual S D K responses from an exported workspace snapshot. The service cannot approve an invoice or send funds.
+
+00:02:27,190 — Review → approve → sign → evidence
+PayFence connects invoice checks to exact authorization and inspectable evidence. The local app, contract flow, and review tools work. Customer validation, public Sepolia proof, and production controls remain next steps. No real stablecoin settlement or customer traction is claimed.

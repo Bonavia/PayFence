@@ -1,0 +1,155 @@
+1
+00:00:00,150 --> 00:00:04,027
+PayFence helps contractor heavy teams review an invoice before they
+
+2
+00:00:04,027 --> 00:00:07,905
+sign an E V M payment. The first product focuses
+
+3
+00:00:07,905 --> 00:00:11,782
+on one reviewer and one contractor invoice, checking the destination,
+
+4
+00:00:11,782 --> 00:00:15,660
+amount, duplicate reference, and the exact details that were approved.
+
+5
+00:00:17,159 --> 00:00:20,681
+A familiar vendor name is not the same as authorizing
+
+6
+00:00:20,681 --> 00:00:24,203
+the destination on an invoice. Details can also change after
+
+7
+00:00:24,203 --> 00:00:27,725
+a reviewer approves them. PayFence makes these checks explicit and
+
+8
+00:00:27,725 --> 00:00:31,247
+invalidates an approval when payment details change. This is our
+
+9
+00:00:31,247 --> 00:00:34,769
+technical thesis, not yet a validated customer finding.
+
+10
+00:00:37,160 --> 00:00:40,861
+The local dashboard checks registered recipients, duplicate invoice references, per
+
+11
+00:00:40,861 --> 00:00:44,564
+payment limits, and valid destinations. It persists the workspace in
+
+12
+00:00:44,564 --> 00:00:48,266
+SQLite and binds approval to a fingerprint. An edit clears
+
+13
+00:00:48,266 --> 00:00:51,968
+that approval. Review packets and a hash linked audit trail
+
+14
+00:00:51,968 --> 00:00:55,670
+make the decision inspectable.
+
+15
+00:00:57,169 --> 00:01:00,884
+The signed payment lab carries the approved invoice into an
+
+16
+00:01:00,884 --> 00:01:04,599
+E I P seven twelve order. The contract checks the
+
+17
+00:01:04,599 --> 00:01:08,315
+registered recipient, limit, payer signature, expiry, and invoice replay protection.
+
+18
+00:01:08,315 --> 00:01:12,030
+We have demonstrated a real local contract transfer to the
+
+19
+00:01:12,030 --> 00:01:15,744
+invoice recipient using valueless mock tokens.
+
+20
+00:01:17,245 --> 00:01:21,094
+The proposed differentiator is the connection between invoice controls, exact
+
+21
+00:01:21,094 --> 00:01:24,943
+authorization, and portable evidence. Read only M C P tools
+
+22
+00:01:24,943 --> 00:01:28,792
+let assistants inspect exported snapshots without spend authority. Market uniqueness
+
+23
+00:01:28,792 --> 00:01:32,641
+remains unproven. PayFence is not an autonomous treasury or a
+
+24
+00:01:32,641 --> 00:01:36,490
+guarantee that all fraud is prevented.
+
+25
+00:01:37,990 --> 00:01:41,550
+The initial customer hypothesis is small agencies and teams already
+
+26
+00:01:41,550 --> 00:01:45,110
+paying contractors through E V M wallets. We plan direct
+
+27
+00:01:45,110 --> 00:01:48,670
+founder led discovery with five payment reviewers, followed by a
+
+28
+00:01:48,670 --> 00:01:52,230
+small review only pilot cohort. We will measure confusion, review
+
+29
+00:01:52,230 --> 00:01:55,790
+time, repeat use, and willingness to pay.
+
+30
+00:01:57,990 --> 00:02:02,065
+A subscription per workspace is the business hypothesis. Pricing, acquisition
+
+31
+00:02:02,065 --> 00:02:06,140
+cost, retention, and market size remain unvalidated. The owner reports
+
+32
+00:02:06,140 --> 00:02:10,215
+no customer interviews, users, revenue, outside funding, or prior submissions.
+
+33
+00:02:10,215 --> 00:02:14,290
+The next evidence should come from real payment reviewers, not
+
+34
+00:02:14,290 --> 00:02:18,365
+additional demo fixtures.
+
+35
+00:02:19,865 --> 00:02:24,108
+The owner intends to apply to the accelerator and build
+
+36
+00:02:24,108 --> 00:02:28,351
+PayFence full time if selected. The next priorities are customer
+
+37
+00:02:28,351 --> 00:02:32,594
+validation, public testnet proof, receipt reconciliation, and reviewed production controls.
+
+38
+00:02:32,594 --> 00:02:36,837
+Founder background and personal motivation remain pending. The ambition is
+
+39
+00:02:36,837 --> 00:02:41,080
+clear: make every contractor payment decision easier to inspect.
